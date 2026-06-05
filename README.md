@@ -1,6 +1,6 @@
 # LLM Wiki
 
-> 원본: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
+> 참고: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
 
 선별한 원천 자료를 바탕으로 LLM이 유지하는 위키를 만들기 위한 재사용 가능한 템플릿.
 
