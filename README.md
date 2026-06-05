@@ -26,7 +26,9 @@
 
 1. 대상 프로젝트에 `llm-wiki/` 폴더를 복사한다.
 2. 원천 문서를 `llm-wiki/raw/sources/`에 넣는다.
-3. LLM 에이전트에게 `llm-wiki/AGENTS.md`를 기준으로 수집하거나 질문하라고 요청한다.
+3. LLM 에이전트에게 `llm-wiki/AGENTS.md`를 기준으로 수집하거나 질문하라고 명시한다.
 4. 생성된 위키는 `llm-wiki/wiki/index.md`에서 탐색한다.
+
+Codex나 Claude 같은 에이전트가 프로젝트 루트의 지침 파일만 자동으로 읽는다면, 루트 지침 파일에서 `llm-wiki/AGENTS.md`를 따르라고 위임한다.
 
 `docs/`는 이 저장소의 배경 설명과 커밋 규칙이다. 템플릿을 다른 프로젝트로 가져갈 때는 보통 복사하지 않는다.
