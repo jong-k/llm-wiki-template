@@ -1,13 +1,13 @@
-# Raw Sources
+# 원천 자료
 
-This directory contains source material selected by the user.
+이 디렉터리는 사용자가 선별한 원천 자료를 담는다.
 
-Rules:
+규칙:
 
-- Treat this directory as immutable input.
-- LLM agents may read files here but should not edit them.
-- Put articles, notes, transcripts, PDFs, exports, and other source files in `raw/sources/`.
-- Put downloaded images, screenshots, PDFs, and attachments in `raw/assets/`.
-- Summaries and interpretations belong in `wiki/`, not here.
+- 이 디렉터리는 불변 입력으로 취급한다.
+- LLM 에이전트는 여기 있는 파일을 읽을 수 있지만 수정하면 안 된다.
+- 기사, 노트, 녹취록, PDF, 내보내기 파일, 기타 원천 파일은 `raw/sources/`에 둔다.
+- 다운로드한 이미지, 스크린샷, PDF, 첨부파일은 `raw/assets/`에 둔다.
+- 요약과 해석은 여기가 아니라 `wiki/`에 둔다.
 
-Large files can be kept out of git with project-specific `.gitignore` rules if needed.
+필요하면 프로젝트별 `.gitignore` 규칙으로 큰 파일을 git에서 제외할 수 있다.
