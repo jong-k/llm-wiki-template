@@ -10,12 +10,17 @@
 .
 ├── AGENTS.md
 ├── docs/
-│   ├── commit-convention.md
-│   └── llm-wiki/
+│   ├── commit-convention.md  # 샘플 커밋 컨벤션
+│   └── llm-wiki/             # Andrej Karpathy의 LLM Wiki gist
+│       ├── idea.en.md        # 원문
+│       └── idea.ko.md        # 한국어 번역
 └── llm-wiki/
     ├── AGENTS.md
     ├── README.md
-    ├── raw/
+    ├── raw/                  # 사용자가 선별한 불변 원천 자료
+    │   ├── README.md         # 원천 자료 관리 규칙
+    │   ├── assets/           # 이미지, 스크린샷, PDF, 첨부파일
+    │   └── sources/          # 기사, 노트, 녹취록, 내보내기 파일
     ├── tools/
     └── wiki/
 ```
@@ -31,4 +36,4 @@
 
 Codex나 Claude 같은 에이전트가 프로젝트 루트의 지침 파일만 자동으로 읽는다면, 루트 지침 파일에서 `llm-wiki/AGENTS.md`를 따르라고 위임한다.
 
-`docs/`는 이 저장소의 배경 설명과 커밋 규칙이다. 템플릿을 다른 프로젝트로 가져갈 때는 보통 복사하지 않는다.
+`docs/`는 템플릿 사용자를 위한 샘플 커밋 컨벤션과 LLM Wiki 아이디어 배경 자료다. 템플릿을 다른 프로젝트로 가져갈 때는 보통 `docs/`를 복사하지 않는다.
