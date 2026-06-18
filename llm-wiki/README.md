@@ -10,21 +10,25 @@
 
 ```text
 .
-├── AGENTS.md
-├── raw/
-│   ├── sources/
-│   └── assets/
-├── wiki/
-│   ├── index.md
-│   ├── log.md
-│   ├── overview.md
-│   ├── sources/
-│   ├── entities/
-│   ├── concepts/
-│   ├── syntheses/
-│   ├── questions/
-│   └── _templates/
-└── tools/
+├── AGENTS.md             # LLM Wiki 운영 스키마와 워크플로
+├── README.md
+├── raw/                  # 사용자가 선별한 불변 원천 자료
+│   ├── README.md         # 원천 자료 관리 규칙
+│   ├── assets/           # 이미지, 스크린샷, PDF, 첨부파일
+│   └── sources/          # 기사, 노트, 녹취록, 내보내기 파일
+├── tools/                # 선택적 헬퍼 스크립트와 로컬 검색 도구
+│   └── README.md         # 도구 추가 기준과 예시
+└── wiki/                 # LLM이 생성하고 유지하는 위키 본문
+    ├── _templates/       # 위키 페이지 유형별 작성 템플릿
+    ├── concepts/         # 아이디어, 이론, 용어, 패턴
+    ├── entities/         # 사람, 조직, 제품, 장소 등 명명된 대상
+    ├── questions/        # 오래 보존할 질문과 답변
+    ├── sources/          # 원천 자료별 요약
+    ├── syntheses/        # 여러 원천을 엮은 분석과 종합
+    ├── index.md          # 위키 콘텐츠 카탈로그
+    ├── log.md            # 위키 작업 기록
+    ├── README.md         # 위키 디렉터리 안내
+    └── overview.md       # 위키의 최상위 종합
 ```
 
 ## 빠른 시작
