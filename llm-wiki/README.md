@@ -18,8 +18,8 @@
 ├── README.md
 ├── raw/                  # 사용자가 선별한 불변 원천 자료
 │   ├── README.md         # 원천 자료 관리 규칙
-│   ├── assets/           # 이미지, 스크린샷, PDF, 첨부파일
-│   └── sources/          # 기사, 노트, 녹취록, 내보내기 파일
+│   ├── assets/<category>/ # 카테고리별 이미지, 스크린샷, PDF, 첨부파일
+│   └── sources/<category>/ # 카테고리별 기사, 노트, 녹취록, 내보내기 파일
 ├── tools/                # 선택적 헬퍼 스크립트와 로컬 검색 도구
 │   └── README.md         # 도구 추가 기준과 예시
 └── wiki/                 # LLM이 생성하고 유지하는 위키 본문
@@ -27,7 +27,7 @@
     ├── concepts/         # 아이디어, 이론, 용어, 패턴
     ├── entities/         # 사람, 조직, 제품, 장소 등 명명된 대상
     ├── questions/        # 오래 보존할 질문과 답변
-    ├── sources/          # 원천 자료별 요약
+    ├── sources/<category>/ # 원천 자료별 요약 (raw/sources 카테고리 미러링)
     ├── syntheses/        # 여러 원천을 엮은 분석과 종합
     ├── index.md          # 위키 콘텐츠 카탈로그
     ├── log.md            # 위키 작업 기록
@@ -37,7 +37,7 @@
 
 ## 빠른 시작
 
-1. 원천 문서를 `raw/sources/`에 추가한다.
+1. 원천 문서를 기술/스택 카테고리 폴더(`raw/sources/<category>/`)에 추가한다. 예: `raw/sources/react-native/`.
 2. LLM 에이전트에게 `AGENTS.md`를 기준으로 원천 자료를 위키에 반영하라고 요청한다.
 3. 생성된 위키를 `wiki/index.md`에서 탐색한다.
 4. 오래 보존할 분석은 `wiki/syntheses/` 또는 `wiki/questions/`에 남긴다.
@@ -48,14 +48,14 @@
 
 새 원천 자료를 위키에 반영할 때 사용한다.
 
-권장 방식은 원천을 먼저 `raw/sources/`에 저장한 뒤 ingest를 요청하는 것이다.
+권장 방식은 원천을 먼저 `raw/sources/<category>/`에 저장한 뒤 ingest를 요청하는 것이다.
 
 ```text
-raw/sources/practical-react-query.md를 AGENTS.md의 ingest 워크플로에 따라 위키에 반영해줘.
+raw/sources/react/practical-react-query.md를 AGENTS.md의 ingest 워크플로에 따라 위키에 반영해줘.
 TanStack Query의 핵심 개념은 wiki/concepts/에, 관련 인물이나 프로젝트는 wiki/entities/에 정리해줘.
 ```
 
-`raw/sources/practical-react-query.md`에는 원문 링크와 수집일을 함께 남긴다.
+`raw/sources/react/practical-react-query.md`에는 원문 링크와 수집일을 함께 남긴다.
 
 ```md
 # Practical React Query
@@ -92,7 +92,7 @@ AGENTS.md의 query 워크플로에 따라 "이 프로젝트의 핵심 설계 원
 ```text
 AGENTS.md의 query 워크플로에 따라 "TanStack Query에서 staleTime과 gcTime은 어떻게 다르게 써야 하나?"에 답해줘.
 위키에 근거가 없으면 웹에서 신뢰할 만한 자료를 찾아보고,
-그 자료를 raw/sources/에 추가할 후보로 정리해줘.
+그 자료를 raw/sources/<category>/에 추가할 후보로 정리해줘.
 ```
 
 ### lint

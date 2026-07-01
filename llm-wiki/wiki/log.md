@@ -7,7 +7,7 @@
 ```md
 ## [YYYY-MM-DD] ingest | 원천 자료 제목
 
-- 원천 자료: `raw/sources/source-file.md`
+- 원천 자료: `raw/sources/<category>/source-file.md`
 - 업데이트: [[source-page]], [[concept-page]]
 - 메모: 변경된 내용의 짧은 요약.
 

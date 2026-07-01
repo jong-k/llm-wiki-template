@@ -12,12 +12,12 @@
 
 ## 디렉터리 역할
 
-- `raw/sources/`: 사용자가 제공한 원천 문서.
-- `raw/assets/`: 원천 자료가 참조하는 로컬 이미지, PDF, 스크린샷, 첨부파일.
+- `raw/sources/<category>/`: 기술/스택 카테고리별 원천 문서. 카테고리 폴더가 분류의 기준(source of truth)이며 kebab-case로 짓는다. 예: `raw/sources/react-native/`.
+- `raw/assets/<category>/`: 해당 카테고리 원천이 참조하는 로컬 이미지, PDF, 스크린샷, 첨부파일.
 - `wiki/index.md`: 위키 페이지의 콘텐츠 중심 카탈로그.
 - `wiki/log.md`: 시간순 추가 전용 활동 로그.
 - `wiki/overview.md`: 현재 위키의 상위 수준 종합.
-- `wiki/sources/`: 원천 문서별 페이지.
+- `wiki/sources/<category>/`: 원천 문서별 페이지. `raw/sources/`의 카테고리 구조를 그대로 미러링한다.
 - `wiki/entities/`: 사람, 조직, 제품, 장소, 기타 명명된 대상.
 - `wiki/concepts/`: 아이디어, 이론, 용어, 패턴, 프레임워크.
 - `wiki/syntheses/`: 여러 원천 자료를 아우르는 분석, 비교, 발전 중인 논지.
@@ -25,12 +25,14 @@
 - `wiki/_templates/`: 페이지 템플릿.
 - `tools/`: 선택적 스크립트와 로컬 검색 도구.
 
+`wiki/entities`, `wiki/concepts`, `wiki/syntheses`, `wiki/questions`는 여러 카테고리에 걸치는 교차 주제이므로 카테고리로 나누지 않고 평면으로 유지한다. 카테고리 미러링은 `raw/sources` ↔ `wiki/sources`에만 적용한다.
+
 ## 워크플로: ingest
 
 사용자가 `raw/sources/`에 원천 자료를 추가하고 처리를 요청하면 이 워크플로를 사용한다. 사용자가 외부 링크만 제공한 경우에는 먼저 원천 후보로 다루고, 사용자의 확인이나 명시적 요청 없이 `raw/`에 저장하지 않는다.
 
 1. 원천 자료를 읽고 핵심 주장, 엔티티, 개념, 날짜, 근거를 식별한다.
-2. `wiki/_templates/source.md`를 사용해 `wiki/sources/`에 대응하는 페이지를 만들거나 업데이트한다.
+2. `wiki/_templates/source.md`를 사용해 대응하는 페이지를 만들거나 업데이트한다. 원천이 `raw/sources/<category>/`에 있으면 같은 카테고리인 `wiki/sources/<category>/`에 만든다. 카테고리는 raw 폴더 구조를 그대로 따르며, 임의로 새 카테고리를 만들거나 이름을 바꾸지 않는다.
 3. `wiki/entities/`, `wiki/concepts/`, `wiki/syntheses/`의 관련 페이지를 업데이트한다.
 4. `wiki/index.md`의 링크를 추가하거나 갱신한다.
 5. `wiki/log.md`에 `## [YYYY-MM-DD] ingest | 제목` 형식으로 항목을 추가한다.
